@@ -21,8 +21,10 @@ def main():
         st.title("OAI Data Viewer Setup")
         data_path = st.text_input("Enter the path to your data folder (e.g., /media/chuv/T7):")
         if st.button("Confirm Path"):
+            print(data_path)
             if os.path.exists(data_path):
                 st.session_state.data_path = data_path
+                
                 st.rerun()
             else:
                 st.error("Invalid path. Please enter a valid directory path.")
